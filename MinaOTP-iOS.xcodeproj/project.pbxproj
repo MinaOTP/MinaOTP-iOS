@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20915B11202C2A780068585F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B10202C2A780068585F /* AppDelegate.swift */; };
+		20915B13202C2A780068585F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B12202C2A780068585F /* ViewController.swift */; };
+		20915B16202C2A780068585F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20915B14202C2A780068585F /* Main.storyboard */; };
+		20915B18202C2A780068585F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20915B17202C2A780068585F /* Assets.xcassets */; };
+		20915B1B202C2A780068585F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20915B19202C2A780068585F /* LaunchScreen.storyboard */; };
+		20915B26202C2A790068585F /* MinaOTP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B25202C2A790068585F /* MinaOTP_iOSTests.swift */; };
+		20915B31202C2A790068585F /* MinaOTP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B30202C2A790068585F /* MinaOTP_iOSUITests.swift */; };
+		20FBA8F221105D240017BFC3 /* GeneratorTotp.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F021105D230017BFC3 /* GeneratorTotp.m */; };
+		20FBA8F321105D240017BFC3 /* Base32Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F121105D230017BFC3 /* Base32Addition.m */; };
+		20FBA8FB21105D490017BFC3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F521105D480017BFC3 /* MainViewController.swift */; };
+		20FBA8FC21105D490017BFC3 /* FWString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F621105D490017BFC3 /* FWString.swift */; };
+		20FBA8FD21105D490017BFC3 /* AddSecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F721105D490017BFC3 /* AddSecretViewController.swift */; };
+		20FBA8FE21105D490017BFC3 /* CodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F821105D490017BFC3 /* CodeTableViewCell.swift */; };
+		20FBA8FF21105D490017BFC3 /* FWColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F921105D490017BFC3 /* FWColor.swift */; };
+		20FBA90021105D490017BFC3 /* SysComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8FA21105D490017BFC3 /* SysComment.swift */; };
+		240A788AE2458873963DAB6E /* Pods_MinaOTP_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96BCECD2EF288035C72CE03 /* Pods_MinaOTP_iOSUITests.framework */; };
+		5B514E27D6406AC6C07465D5 /* Pods_MinaOTP_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B701838C9E3EB9847FFC4BC4 /* Pods_MinaOTP_iOSTests.framework */; };
+		70949E33B8E474360560B4AB /* Pods_MinaOTP_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20915B22202C2A790068585F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20915B05202C2A780068585F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20915B0C202C2A780068585F;
+			remoteInfo = "MinaOTP-iOS";
+		};
+		20915B2D202C2A790068585F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20915B05202C2A780068585F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20915B0C202C2A780068585F;
+			remoteInfo = "MinaOTP-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04C8DE960CC5051B205AE3A7 /* Pods-MinaOTP-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSTests/Pods-MinaOTP-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		20915B0D202C2A780068585F /* MinaOTP-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MinaOTP-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20915B10202C2A780068585F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20915B12202C2A780068585F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20915B15202C2A780068585F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20915B17202C2A780068585F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20915B1A202C2A780068585F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20915B1C202C2A790068585F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20915B21202C2A790068585F /* MinaOTP-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MinaOTP-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20915B25202C2A790068585F /* MinaOTP_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinaOTP_iOSTests.swift; sourceTree = "<group>"; };
+		20915B27202C2A790068585F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20915B2C202C2A790068585F /* MinaOTP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MinaOTP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20915B30202C2A790068585F /* MinaOTP_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinaOTP_iOSUITests.swift; sourceTree = "<group>"; };
+		20915B32202C2A790068585F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20FBA8EE21105D230017BFC3 /* GeneratorTotp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneratorTotp.h; sourceTree = "<group>"; };
+		20FBA8EF21105D230017BFC3 /* Base32Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base32Addition.h; sourceTree = "<group>"; };
+		20FBA8F021105D230017BFC3 /* GeneratorTotp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratorTotp.m; sourceTree = "<group>"; };
+		20FBA8F121105D230017BFC3 /* Base32Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base32Addition.m; sourceTree = "<group>"; };
+		20FBA8F521105D480017BFC3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		20FBA8F621105D490017BFC3 /* FWString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWString.swift; sourceTree = "<group>"; };
+		20FBA8F721105D490017BFC3 /* AddSecretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSecretViewController.swift; sourceTree = "<group>"; };
+		20FBA8F821105D490017BFC3 /* CodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTableViewCell.swift; sourceTree = "<group>"; };
+		20FBA8F921105D490017BFC3 /* FWColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWColor.swift; sourceTree = "<group>"; };
+		20FBA8FA21105D490017BFC3 /* SysComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysComment.swift; sourceTree = "<group>"; };
+		20FBA901211062220017BFC3 /* MinaOTP-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinaOTP-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		32DA28C5093E1317165C75EF /* Pods-MinaOTP-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinaOTP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912F9227A9AE53B58A70782C /* Pods-MinaOTP-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSTests/Pods-MinaOTP-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B425E6B69155FC0A3732B737 /* Pods-MinaOTP-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSUITests/Pods-MinaOTP-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B701838C9E3EB9847FFC4BC4 /* Pods_MinaOTP_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinaOTP_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7819CA4E852954D5F68A038 /* Pods-MinaOTP-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E96BCECD2EF288035C72CE03 /* Pods_MinaOTP_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinaOTP_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B51BE90827DD792DF22EBA /* Pods-MinaOTP-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSUITests/Pods-MinaOTP-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20915B0A202C2A780068585F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70949E33B8E474360560B4AB /* Pods_MinaOTP_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B1E202C2A790068585F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B514E27D6406AC6C07465D5 /* Pods_MinaOTP_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B29202C2A790068585F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240A788AE2458873963DAB6E /* Pods_MinaOTP_iOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20915B04202C2A780068585F = {
+			isa = PBXGroup;
+			children = (
+				20915B0F202C2A780068585F /* MinaOTP-iOS */,
+				20915B24202C2A790068585F /* MinaOTP-iOSTests */,
+				20915B2F202C2A790068585F /* MinaOTP-iOSUITests */,
+				20915B0E202C2A780068585F /* Products */,
+				39A9050CF6C3081E71558F02 /* Pods */,
+				4BAE6971698FE9C58370DC3B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		20915B0E202C2A780068585F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20915B0D202C2A780068585F /* MinaOTP-iOS.app */,
+				20915B21202C2A790068585F /* MinaOTP-iOSTests.xctest */,
+				20915B2C202C2A790068585F /* MinaOTP-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20915B0F202C2A780068585F /* MinaOTP-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				20FBA8ED21105D230017BFC3 /* OTPGenerator */,
+				20915B10202C2A780068585F /* AppDelegate.swift */,
+				20915B12202C2A780068585F /* ViewController.swift */,
+				20FBA8F721105D490017BFC3 /* AddSecretViewController.swift */,
+				20FBA8F821105D490017BFC3 /* CodeTableViewCell.swift */,
+				20FBA8F921105D490017BFC3 /* FWColor.swift */,
+				20FBA8F621105D490017BFC3 /* FWString.swift */,
+				20FBA8F521105D480017BFC3 /* MainViewController.swift */,
+				20FBA901211062220017BFC3 /* MinaOTP-iOS-Bridging-Header.h */,
+				20FBA8FA21105D490017BFC3 /* SysComment.swift */,
+				20915B14202C2A780068585F /* Main.storyboard */,
+				20915B17202C2A780068585F /* Assets.xcassets */,
+				20915B19202C2A780068585F /* LaunchScreen.storyboard */,
+				20915B1C202C2A790068585F /* Info.plist */,
+			);
+			path = "MinaOTP-iOS";
+			sourceTree = "<group>";
+		};
+		20915B24202C2A790068585F /* MinaOTP-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				20915B25202C2A790068585F /* MinaOTP_iOSTests.swift */,
+				20915B27202C2A790068585F /* Info.plist */,
+			);
+			path = "MinaOTP-iOSTests";
+			sourceTree = "<group>";
+		};
+		20915B2F202C2A790068585F /* MinaOTP-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20915B30202C2A790068585F /* MinaOTP_iOSUITests.swift */,
+				20915B32202C2A790068585F /* Info.plist */,
+			);
+			path = "MinaOTP-iOSUITests";
+			sourceTree = "<group>";
+		};
+		20FBA8ED21105D230017BFC3 /* OTPGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				20FBA8EE21105D230017BFC3 /* GeneratorTotp.h */,
+				20FBA8EF21105D230017BFC3 /* Base32Addition.h */,
+				20FBA8F021105D230017BFC3 /* GeneratorTotp.m */,
+				20FBA8F121105D230017BFC3 /* Base32Addition.m */,
+			);
+			path = OTPGenerator;
+			sourceTree = "<group>";
+		};
+		39A9050CF6C3081E71558F02 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7819CA4E852954D5F68A038 /* Pods-MinaOTP-iOS.debug.xcconfig */,
+				32DA28C5093E1317165C75EF /* Pods-MinaOTP-iOS.release.xcconfig */,
+				912F9227A9AE53B58A70782C /* Pods-MinaOTP-iOSTests.debug.xcconfig */,
+				04C8DE960CC5051B205AE3A7 /* Pods-MinaOTP-iOSTests.release.xcconfig */,
+				F3B51BE90827DD792DF22EBA /* Pods-MinaOTP-iOSUITests.debug.xcconfig */,
+				B425E6B69155FC0A3732B737 /* Pods-MinaOTP-iOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4BAE6971698FE9C58370DC3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */,
+				B701838C9E3EB9847FFC4BC4 /* Pods_MinaOTP_iOSTests.framework */,
+				E96BCECD2EF288035C72CE03 /* Pods_MinaOTP_iOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20915B0C202C2A780068585F /* MinaOTP-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20915B35202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOS" */;
+			buildPhases = (
+				51415A88A5885FFFDC739E0B /* [CP] Check Pods Manifest.lock */,
+				20915B09202C2A780068585F /* Sources */,
+				20915B0A202C2A780068585F /* Frameworks */,
+				20915B0B202C2A780068585F /* Resources */,
+				27456916843D77F24B6BA67F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MinaOTP-iOS";
+			productName = "MinaOTP-iOS";
+			productReference = 20915B0D202C2A780068585F /* MinaOTP-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20915B20202C2A790068585F /* MinaOTP-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20915B38202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOSTests" */;
+			buildPhases = (
+				B9A09DB5AC9F137D598A28B5 /* [CP] Check Pods Manifest.lock */,
+				20915B1D202C2A790068585F /* Sources */,
+				20915B1E202C2A790068585F /* Frameworks */,
+				20915B1F202C2A790068585F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20915B23202C2A790068585F /* PBXTargetDependency */,
+			);
+			name = "MinaOTP-iOSTests";
+			productName = "MinaOTP-iOSTests";
+			productReference = 20915B21202C2A790068585F /* MinaOTP-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20915B2B202C2A790068585F /* MinaOTP-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20915B3B202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOSUITests" */;
+			buildPhases = (
+				1D5555254E4E0DA6E5B5C92E /* [CP] Check Pods Manifest.lock */,
+				20915B28202C2A790068585F /* Sources */,
+				20915B29202C2A790068585F /* Frameworks */,
+				20915B2A202C2A790068585F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20915B2E202C2A790068585F /* PBXTargetDependency */,
+			);
+			name = "MinaOTP-iOSUITests";
+			productName = "MinaOTP-iOSUITests";
+			productReference = 20915B2C202C2A790068585F /* MinaOTP-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20915B05202C2A780068585F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Four_w;
+				TargetAttributes = {
+					20915B0C202C2A780068585F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					20915B20202C2A790068585F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 20915B0C202C2A780068585F;
+					};
+					20915B2B202C2A790068585F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 20915B0C202C2A780068585F;
+					};
+				};
+			};
+			buildConfigurationList = 20915B08202C2A780068585F /* Build configuration list for PBXProject "MinaOTP-iOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20915B04202C2A780068585F;
+			productRefGroup = 20915B0E202C2A780068585F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20915B0C202C2A780068585F /* MinaOTP-iOS */,
+				20915B20202C2A790068585F /* MinaOTP-iOSTests */,
+				20915B2B202C2A790068585F /* MinaOTP-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20915B0B202C2A780068585F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20915B1B202C2A780068585F /* LaunchScreen.storyboard in Resources */,
+				20915B18202C2A780068585F /* Assets.xcassets in Resources */,
+				20915B16202C2A780068585F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B1F202C2A790068585F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B2A202C2A790068585F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D5555254E4E0DA6E5B5C92E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MinaOTP-iOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27456916843D77F24B6BA67F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51415A88A5885FFFDC739E0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MinaOTP-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9A09DB5AC9F137D598A28B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MinaOTP-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20915B09202C2A780068585F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20FBA8FE21105D490017BFC3 /* CodeTableViewCell.swift in Sources */,
+				20FBA8F221105D240017BFC3 /* GeneratorTotp.m in Sources */,
+				20FBA8FF21105D490017BFC3 /* FWColor.swift in Sources */,
+				20915B13202C2A780068585F /* ViewController.swift in Sources */,
+				20915B11202C2A780068585F /* AppDelegate.swift in Sources */,
+				20FBA8FC21105D490017BFC3 /* FWString.swift in Sources */,
+				20FBA8FD21105D490017BFC3 /* AddSecretViewController.swift in Sources */,
+				20FBA8F321105D240017BFC3 /* Base32Addition.m in Sources */,
+				20FBA8FB21105D490017BFC3 /* MainViewController.swift in Sources */,
+				20FBA90021105D490017BFC3 /* SysComment.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B1D202C2A790068585F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20915B26202C2A790068585F /* MinaOTP_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20915B28202C2A790068585F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20915B31202C2A790068585F /* MinaOTP_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20915B23202C2A790068585F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20915B0C202C2A780068585F /* MinaOTP-iOS */;
+			targetProxy = 20915B22202C2A790068585F /* PBXContainerItemProxy */;
+		};
+		20915B2E202C2A790068585F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20915B0C202C2A780068585F /* MinaOTP-iOS */;
+			targetProxy = 20915B2D202C2A790068585F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20915B14202C2A780068585F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20915B15202C2A780068585F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20915B19202C2A780068585F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20915B1A202C2A780068585F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20915B33202C2A790068585F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20915B34202C2A790068585F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20915B36202C2A790068585F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7819CA4E852954D5F68A038 /* Pods-MinaOTP-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NQR38UJVN;
+				INFOPLIST_FILE = "MinaOTP-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Mina-OTP-SWIFT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MinaOTP-iOS/MinaOTP-iOS-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		20915B37202C2A790068585F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DA28C5093E1317165C75EF /* Pods-MinaOTP-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3NQR38UJVN;
+				INFOPLIST_FILE = "MinaOTP-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Mina-OTP-SWIFT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MinaOTP-iOS/MinaOTP-iOS-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		20915B39202C2A790068585F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912F9227A9AE53B58A70782C /* Pods-MinaOTP-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BB5VK42K87;
+				INFOPLIST_FILE = "MinaOTP-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snwjm.MinaOTP-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinaOTP-iOS.app/MinaOTP-iOS";
+			};
+			name = Debug;
+		};
+		20915B3A202C2A790068585F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04C8DE960CC5051B205AE3A7 /* Pods-MinaOTP-iOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BB5VK42K87;
+				INFOPLIST_FILE = "MinaOTP-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snwjm.MinaOTP-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MinaOTP-iOS.app/MinaOTP-iOS";
+			};
+			name = Release;
+		};
+		20915B3C202C2A790068585F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B51BE90827DD792DF22EBA /* Pods-MinaOTP-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BB5VK42K87;
+				INFOPLIST_FILE = "MinaOTP-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snwjm.MinaOTP-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MinaOTP-iOS";
+			};
+			name = Debug;
+		};
+		20915B3D202C2A790068585F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B425E6B69155FC0A3732B737 /* Pods-MinaOTP-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BB5VK42K87;
+				INFOPLIST_FILE = "MinaOTP-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snwjm.MinaOTP-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MinaOTP-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20915B08202C2A780068585F /* Build configuration list for PBXProject "MinaOTP-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20915B33202C2A790068585F /* Debug */,
+				20915B34202C2A790068585F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20915B35202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20915B36202C2A790068585F /* Debug */,
+				20915B37202C2A790068585F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20915B38202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20915B39202C2A790068585F /* Debug */,
+				20915B3A202C2A790068585F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20915B3B202C2A790068585F /* Build configuration list for PBXNativeTarget "MinaOTP-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20915B3C202C2A790068585F /* Debug */,
+				20915B3D202C2A790068585F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20915B05202C2A780068585F /* Project object */;
+}
