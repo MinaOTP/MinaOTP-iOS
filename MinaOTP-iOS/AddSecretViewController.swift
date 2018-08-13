@@ -18,6 +18,8 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     let qrViewWeight = CGFloat(280)
     let qrViewHeight = CGFloat(280)/4*3
 
+    weak var delegate : AddSecretViewControllerDelegate?
+
     private lazy var output : AVCaptureMetadataOutput = {
 
         let out = AVCaptureMetadataOutput()
@@ -56,7 +58,7 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         let fillLayer = CAShapeLayer()
         fillLayer.path = bezierPath.cgPath
         fillLayer.fillRule = kCAFillRuleEvenOdd
-        fillLayer.fillColor = UIColor.white.cgColor
+        fillLayer.fillColor = UIColor.blackBackColor().cgColor
         fillLayer.opacity = 1
         maskView.layer.addSublayer(fillLayer)
         return maskView
@@ -70,11 +72,11 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "添加"
-        self.view.backgroundColor = UIColor.white
+        self.title = "Scan Qr Code"
+        self.view.backgroundColor = UIColor.blackBackColor()
         // Do any additional setup after loading the view.
-        let leftBarItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(self.returnAction))
-        self.navigationItem.leftBarButtonItem = leftBarItem
+//        let leftBarItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(self.returnAction))
+//        self.navigationItem.leftBarButtonItem = leftBarItem
         scanQRCode()
         self.view.addSubview(maskView)
     }
@@ -121,18 +123,13 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     }
     func otpFormat(code: String) {
         if code.contains("otpauth://totp/") == false || code.contains("?secret=") == false || code.contains("&issuer=") == false{
-            print("格式不正确")
             session.startRunning()
             return
         }
-        // 将数据保存到UserDefaults
         let defaults = UserDefaults.standard
         var allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
         allItems.append(code)
         defaults.set(allItems, forKey: "MinaOtp")
-        self.navigationController?.popViewController(animated: true)
-    }
-    @objc func returnAction(){
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -141,5 +138,9 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+protocol AddSecretViewControllerDelegate: class {
+    func scanSuccess(code: String)
 }
 

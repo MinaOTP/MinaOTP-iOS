@@ -68,6 +68,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tab.backgroundColor = UIColor.blackBackColor()
         tab.separatorStyle = .singleLine
         tab.separatorColor = UIColor.lineColor()
+        tab.allowsSelectionDuringEditing = true
         if #available(iOS 11.0, *) {
             tab.contentInsetAdjustmentBehavior = .never
         } else {
@@ -109,15 +110,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @objc func rightItemAction(sender:UIBarButtonItem){
-        self.totpTableView.setEditing(false, animated: false)
-        self.navigationController?.pushViewController(AddSecretViewController(), animated: true)
+
+
+        let aletVC = UIAlertController.init(title: "Add Two-factor Authentication", message: nil, preferredStyle: .actionSheet)
+        aletVC.addAction(UIAlertAction.init(title: "Scan Qr Code", style: .default, handler: { (action) in
+            self.navigationController?.pushViewController(AddSecretViewController(), animated: true)
+        }))
+        aletVC.addAction(UIAlertAction.init(title: "Manual entry", style: .default, handler: { (action) in
+            self.navigationController?.pushViewController(EditViewController(), animated: true)
+        }))
+        self.present(aletVC, animated: true) {
+            self.totpTableView.setEditing(false, animated: false)
+        }
     }
 
     @objc func leftItemAction(sender:UIBarButtonItem){
-
+        if self.totpTableView.isEditing {
+            self.navigationItem.leftBarButtonItem?.title = "Edit"
+        }else{
+            self.navigationItem.leftBarButtonItem?.title = "Done"
+        }
         self.totpTableView.setEditing(!self.totpTableView.isEditing, animated: true)
         self.totpTableView.isEditing ? self.stopTimer() : self.startTimer()
     }
+
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return kCellHeight
@@ -169,39 +185,31 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell = CodeTableViewCell(style: .subtitle,
                                    reuseIdentifier: "CodeTableViewCell")
         }
-        let totpDic = self.totpDictionaryFormat(code: totpArray[indexPath.row])
+
+        let totpDic = Tools().totpDictionaryFormat(code: totpArray[indexPath.row])
+        cell!.otpauthLabel.text = totpDic["remark"] as? String
         cell!.issuerLabel.text = totpDic["issuer"] as? String
-        cell!.otpauthLabel.text = totpDic["otpauth"] as? String
         cell!.secretLabel.text = self.totpTableView.isEditing ? "" : GeneratorTotp.generateOTP(forSecret: totpDic["secret"] as? String)
 
         return cell!
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
-//        let oldIndexPath = IndexPath(row: self.selectRow, section: 0)
-//        if self.selectRow == indexPath.row{
-//            self.selectRow = -1
-//        }else{
-//            self.selectRow = indexPath.row
-//        }
-//        tableView.reloadRows(at: [indexPath, oldIndexPath], with: .fade)
-//
-//        if self.selectRow != -1 {
-//            timer.fireDate = Date.init()
-//        }else{
-//            timer.fireDate = Date.distantFuture
-//        }
-//    }
-    func totpDictionaryFormat(code: String) -> Dictionary<String, Any> {
-        var replaceStr = code
-        let breakWords = ["otpauth://totp/", "?secret=", "&issuer="]
-        for word in breakWords{
-            replaceStr = replaceStr.replacingOccurrences(of: word, with: "#break_words#")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+
+        if totpTableView.isEditing {
+            totpTableView.setEditing(false, animated: true)
+            let totpDic = Tools().totpDictionaryFormat(code: totpArray[indexPath.row])
+            let editVc = EditViewController()
+            editVc.editRow = indexPath.row
+            editVc.remarkTextField.text = totpDic["remark"] as? String
+            editVc.issuerTextField.text = totpDic["issuer"] as? String
+            editVc.secretTextFiled.text = totpDic["secret"] as? String
+            self.navigationController?.pushViewController(editVc, animated: true)
+        }else{
+            
         }
-        let resultArray = replaceStr.components(separatedBy: "#break_words#")
-        let resultDic = ["otpauth": resultArray[1], "secret": resultArray[2], "issuer": resultArray[3]]
-        return resultDic
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

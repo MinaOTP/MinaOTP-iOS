@@ -14,6 +14,8 @@
 		20915B1B202C2A780068585F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20915B19202C2A780068585F /* LaunchScreen.storyboard */; };
 		20915B26202C2A790068585F /* MinaOTP_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B25202C2A790068585F /* MinaOTP_iOSTests.swift */; };
 		20915B31202C2A790068585F /* MinaOTP_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20915B30202C2A790068585F /* MinaOTP_iOSUITests.swift */; };
+		20A17A7D212172780052792D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A17A7C212172780052792D /* EditViewController.swift */; };
+		20A17A7F2121856F0052792D /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A17A7E2121856F0052792D /* Tools.swift */; };
 		20FBA8F221105D240017BFC3 /* GeneratorTotp.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F021105D230017BFC3 /* GeneratorTotp.m */; };
 		20FBA8F321105D240017BFC3 /* Base32Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F121105D230017BFC3 /* Base32Addition.m */; };
 		20FBA8FB21105D490017BFC3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F521105D480017BFC3 /* MainViewController.swift */; };
@@ -59,6 +61,8 @@
 		20915B2C202C2A790068585F /* MinaOTP-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MinaOTP-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20915B30202C2A790068585F /* MinaOTP_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinaOTP_iOSUITests.swift; sourceTree = "<group>"; };
 		20915B32202C2A790068585F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20A17A7C212172780052792D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		20A17A7E2121856F0052792D /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		20FBA8EE21105D230017BFC3 /* GeneratorTotp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneratorTotp.h; sourceTree = "<group>"; };
 		20FBA8EF21105D230017BFC3 /* Base32Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base32Addition.h; sourceTree = "<group>"; };
 		20FBA8F021105D230017BFC3 /* GeneratorTotp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratorTotp.m; sourceTree = "<group>"; };
@@ -136,11 +140,13 @@
 				20FBA8ED21105D230017BFC3 /* OTPGenerator */,
 				20915B10202C2A780068585F /* AppDelegate.swift */,
 				20915B12202C2A780068585F /* ViewController.swift */,
+				20FBA8F521105D480017BFC3 /* MainViewController.swift */,
 				20FBA8F721105D490017BFC3 /* AddSecretViewController.swift */,
+				20A17A7C212172780052792D /* EditViewController.swift */,
 				20FBA8F821105D490017BFC3 /* CodeTableViewCell.swift */,
 				20FBA8F921105D490017BFC3 /* FWColor.swift */,
 				20FBA8F621105D490017BFC3 /* FWString.swift */,
-				20FBA8F521105D480017BFC3 /* MainViewController.swift */,
+				20A17A7E2121856F0052792D /* Tools.swift */,
 				20FBA901211062220017BFC3 /* MinaOTP-iOS-Bridging-Header.h */,
 				20FBA8FA21105D490017BFC3 /* SysComment.swift */,
 				20915B14202C2A780068585F /* Main.storyboard */,
@@ -419,12 +425,14 @@
 				20FBA8FE21105D490017BFC3 /* CodeTableViewCell.swift in Sources */,
 				20FBA8F221105D240017BFC3 /* GeneratorTotp.m in Sources */,
 				20FBA8FF21105D490017BFC3 /* FWColor.swift in Sources */,
+				20A17A7F2121856F0052792D /* Tools.swift in Sources */,
 				20915B13202C2A780068585F /* ViewController.swift in Sources */,
 				20915B11202C2A780068585F /* AppDelegate.swift in Sources */,
 				20FBA8FC21105D490017BFC3 /* FWString.swift in Sources */,
 				20FBA8FD21105D490017BFC3 /* AddSecretViewController.swift in Sources */,
 				20FBA8F321105D240017BFC3 /* Base32Addition.m in Sources */,
 				20FBA8FB21105D490017BFC3 /* MainViewController.swift in Sources */,
+				20A17A7D212172780052792D /* EditViewController.swift in Sources */,
 				20FBA90021105D490017BFC3 /* SysComment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
