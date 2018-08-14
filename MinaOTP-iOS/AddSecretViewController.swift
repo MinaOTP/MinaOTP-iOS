@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import PKHUD
 
 class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     //    扫描二维码所需要的属性
@@ -130,6 +131,7 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         var allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
         allItems.append(code)
         defaults.set(allItems, forKey: "MinaOtp")
+        HUD.flash(.success, delay: 1)
         self.navigationController?.popViewController(animated: true)
     }
 

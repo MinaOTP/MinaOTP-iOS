@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class EditViewController: UIViewController, UITextFieldDelegate{
 
@@ -22,77 +23,102 @@ class EditViewController: UIViewController, UITextFieldDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Manual entry"
         self.view.backgroundColor = UIColor.blackBackColor()
-        self.view.addSubview(self.remarkTitleLabel)
-        self.view.addSubview(self.remarkTextField)
-        self.view.addSubview(self.issuerTitleLabel)
-        self.view.addSubview(self.issuerTextField)
-        self.view.addSubview(self.secretTitleLabel)
-        self.view.addSubview(self.secretTextFiled)
+        self.view.addSubview(self.remarkBgView)
+        self.remarkBgView.addSubview(self.remarkTitleLabel)
+        self.remarkBgView.addSubview(self.remarkTextField)
+        self.view.addSubview(self.issuerBgView)
+        self.issuerBgView.addSubview(self.issuerTitleLabel)
+        self.issuerBgView.addSubview(self.issuerTextField)
+        self.view.addSubview(self.secretBgView)
+        self.secretBgView.addSubview(self.secretTitleLabel)
+        self.secretBgView.addSubview(self.secretTextFiled)
 
         self.navigationItem.leftBarButtonItem?.setTitlePositionAdjustment(UIOffset.init(horizontal: 0, vertical: 0), for: .default)
         let rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(rightItemAction))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
+    lazy var remarkBgView: UIView = {
+        let view = UIView.init(frame: CGRect(x: 0, y:0 , width: KScreenW, height: 80))
+        view.backgroundColor = UIColor.cellBackColor()
+        return view
+    }()
     lazy var remarkTitleLabel: UILabel = {
-        let lab = UILabel.init(frame: CGRect(x: 12, y:0 , width: 200, height: 20))
+        let lab = UILabel.init(frame: CGRect(x: 12, y:0 , width: 200, height: 30))
         lab.text = "请输入remark:"
         lab.textColor = UIColor.white
-        lab.font = UIFont.systemFont(ofSize: 10)
+        lab.font = UIFont.systemFont(ofSize: 12)
         return lab
     }()
     lazy var remarkTextField: UITextField = {
         let textField = UITextField.init(frame: CGRect(x: 12, y: 30, width: KScreenW-24, height: 40))
         textField.delegate = self
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 2
-        textField.layer.borderColor = UIColor.textOrangeColor().cgColor
         textField.textColor = UIColor.white
         textField.font = UIFont.systemFont(ofSize: 12)
         textField.returnKeyType = .done
         textField.tintColor = UIColor.textOrangeColor()
         textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+
+        var line = CALayer.init()
+        line.frame = CGRect(x: 0, y: textField.frame.size.height, width: textField.frame.size.width, height: 1)
+        line.backgroundColor = UIColor.lineColor().cgColor
+        textField.layer.addSublayer(line)
         return textField
     }()
+    lazy var issuerBgView: UIView = {
+        let view = UIView.init(frame: CGRect(x: 0, y:remarkBgView.frame.origin.y+remarkBgView.frame.size.height, width: KScreenW, height: 80))
+        view.backgroundColor = UIColor.cellBackColor()
+        return view
+    }()
     lazy var issuerTitleLabel: UILabel = {
-        let lab = UILabel.init(frame: CGRect(x: 12, y: 80, width: 200, height: 20))
+        let lab = UILabel.init(frame: CGRect(x: 12, y:0 , width: 200, height: 30))
         lab.text = "请输入issuer:"
         lab.textColor = UIColor.white
-        lab.font = UIFont.systemFont(ofSize: 10)
+        lab.font = UIFont.systemFont(ofSize: 12)
         return lab
     }()
     lazy var issuerTextField: UITextField = {
-        let textField = UITextField.init(frame: CGRect(x: 12, y: 110, width: KScreenW-24, height: 40))
+        let textField = UITextField.init(frame: CGRect(x: 12, y: 30, width: KScreenW-24, height: 40))
         textField.delegate = self
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 2
-        textField.layer.borderColor = UIColor.textOrangeColor().cgColor
         textField.textColor = UIColor.white
         textField.font = UIFont.systemFont(ofSize: 12)
         textField.returnKeyType = .done
         textField.tintColor = UIColor.textOrangeColor()
         textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+
+        var line = CALayer.init()
+        line.frame = CGRect(x: 0, y: textField.frame.size.height, width: textField.frame.size.width, height: 1)
+        line.backgroundColor = UIColor.lineColor().cgColor
+        textField.layer.addSublayer(line)
         return textField
     }()
+    lazy var secretBgView: UIView = {
+        let view = UIView.init(frame: CGRect(x: 0, y:issuerBgView.frame.origin.y+issuerBgView.frame.size.height , width: KScreenW, height: 80))
+        view.backgroundColor = UIColor.cellBackColor()
+        return view
+    }()
     lazy var secretTitleLabel: UILabel = {
-        let lab = UILabel.init(frame: CGRect(x: 12, y: 160, width: 200, height: 20))
+        let lab = UILabel.init(frame: CGRect(x: 12, y:0 , width: 200, height: 30))
         lab.text = "请输入secret:"
         lab.textColor = UIColor.white
-        lab.font = UIFont.systemFont(ofSize: 10)
+        lab.font = UIFont.systemFont(ofSize: 12)
         return lab
     }()
     lazy var secretTextFiled: UITextField = {
-        let textField = UITextField.init(frame: CGRect(x: 12, y: 190, width: KScreenW-24, height: 40))
+        let textField = UITextField.init(frame: CGRect(x: 12, y: 30, width: KScreenW-24, height: 40))
         textField.delegate = self
-        textField.layer.borderWidth = 1
-        textField.layer.cornerRadius = 2
-        textField.layer.borderColor = UIColor.textOrangeColor().cgColor
         textField.textColor = UIColor.white
         textField.font = UIFont.systemFont(ofSize: 12)
         textField.returnKeyType = .done
         textField.tintColor = UIColor.textOrangeColor()
         textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+
+        var line = CALayer.init()
+        line.frame = CGRect(x: 0, y: textField.frame.size.height, width: textField.frame.size.width, height: 1)
+        line.backgroundColor = UIColor.lineColor().cgColor
+        textField.layer.addSublayer(line)
         return textField
     }()
 
@@ -131,6 +157,7 @@ class EditViewController: UIViewController, UITextFieldDelegate{
             allItems.insert(totp, at: editRow)
         }
         defaults.set(allItems, forKey: "MinaOtp")
+        HUD.flash(.success, delay: 1)
         self.navigationController?.popViewController(animated: true)
     }
 }

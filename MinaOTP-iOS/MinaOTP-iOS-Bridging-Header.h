@@ -10,5 +10,6 @@
 #define MinaOTP_iOS_Bridging_Header_h
 
 #import "GeneratorTotp.h"
+#import "UITextView+ZWPlaceHolder.h"
 
 #endif /* MinaOTP_iOS_Bridging_Header_h */

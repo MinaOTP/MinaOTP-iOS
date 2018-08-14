@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import PKHUD
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-//    var selectRow = Int(-1)
     var totpArray = [String]()
     var oldTimeStamp = 0
 
@@ -29,10 +29,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Mina-OTP"
+        self.navigationItem.title = "MinaOTP"
         self.view.backgroundColor = UIColor.blackBackColor()
-
-
 
         let rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(rightItemAction))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
@@ -51,7 +49,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.addSubview(self.totpTableView)
         self.view.addSubview(self.progressView)
     }
-
     lazy var progressView:UIProgressView = {
         let view = UIProgressView(progressViewStyle: .bar)
         view.frame = CGRect(x: 0, y: 0, width: KScreenW, height: 0)
@@ -111,7 +108,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @objc func rightItemAction(sender:UIBarButtonItem){
 
-
+        if self.navigationItem.rightBarButtonItem?.title == "Export" {
+            self.navigationItem.leftBarButtonItem?.title = "Edit"
+            self.navigationItem.rightBarButtonItem?.title = "Add"
+            self.totpTableView.setEditing(false, animated: false)
+            self.navigationController?.pushViewController(ExportJsonViewController(), animated: true)
+            return
+        }
         let aletVC = UIAlertController.init(title: "Add Two-factor Authentication", message: nil, preferredStyle: .actionSheet)
         aletVC.addAction(UIAlertAction.init(title: "Scan Qr Code", style: .default, handler: { (action) in
             self.navigationController?.pushViewController(AddSecretViewController(), animated: true)
@@ -119,7 +122,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         aletVC.addAction(UIAlertAction.init(title: "Manual entry", style: .default, handler: { (action) in
             self.navigationController?.pushViewController(EditViewController(), animated: true)
         }))
+        aletVC.addAction(UIAlertAction.init(title: "Import Json", style: .default, handler: { (action) in
+            self.navigationController?.pushViewController(JsonViewController(), animated: true)
+        }))
+        aletVC.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (action) in
+
+        }))
         self.present(aletVC, animated: true) {
+            self.navigationItem.leftBarButtonItem?.title = "Edit"
+            self.navigationItem.rightBarButtonItem?.title = "Add"
             self.totpTableView.setEditing(false, animated: false)
         }
     }
@@ -127,8 +138,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func leftItemAction(sender:UIBarButtonItem){
         if self.totpTableView.isEditing {
             self.navigationItem.leftBarButtonItem?.title = "Edit"
+            self.navigationItem.rightBarButtonItem?.title = "Add"
         }else{
             self.navigationItem.leftBarButtonItem?.title = "Done"
+            self.navigationItem.rightBarButtonItem?.title = "Export"
         }
         self.totpTableView.setEditing(!self.totpTableView.isEditing, animated: true)
         self.totpTableView.isEditing ? self.stopTimer() : self.startTimer()
@@ -196,9 +209,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
 
+        let totpDic = Tools().totpDictionaryFormat(code: totpArray[indexPath.row])
+
         if totpTableView.isEditing {
+            self.navigationItem.leftBarButtonItem?.title = "Edit"
+            self.navigationItem.rightBarButtonItem?.title = "Add"
             totpTableView.setEditing(false, animated: true)
-            let totpDic = Tools().totpDictionaryFormat(code: totpArray[indexPath.row])
             let editVc = EditViewController()
             editVc.editRow = indexPath.row
             editVc.remarkTextField.text = totpDic["remark"] as? String
@@ -206,9 +222,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             editVc.secretTextFiled.text = totpDic["secret"] as? String
             self.navigationController?.pushViewController(editVc, animated: true)
         }else{
-            
+            UIPasteboard.general.string = GeneratorTotp.generateOTP(forSecret: totpDic["secret"] as? String)
+            HUD.flash(.labeledSuccess(title: "复制成功", subtitle: nil), delay: 0.5)
         }
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
