@@ -123,7 +123,7 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         dismiss(animated: true)
     }
     func otpFormat(code: String) {
-        if code.contains("otpauth://totp/") == false || code.contains("?secret=") == false || code.contains("&issuer=") == false{
+        if code.contains("otpauth://totp/") == false || code.contains("secret=") == false || code.contains("issuer=") == false{
             session.startRunning()
             return
         }
