@@ -28,6 +28,8 @@
 		20FBA8FF21105D490017BFC3 /* FWColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8F921105D490017BFC3 /* FWColor.swift */; };
 		20FBA90021105D490017BFC3 /* SysComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FBA8FA21105D490017BFC3 /* SysComment.swift */; };
 		240A788AE2458873963DAB6E /* Pods_MinaOTP_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96BCECD2EF288035C72CE03 /* Pods_MinaOTP_iOSUITests.framework */; };
+		47B57E84258A24E5004D312F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B57E83258A24E5004D312F /* CloudKit.framework */; };
+		47B57E86258A3472004D312F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B57E85258A3472004D312F /* DataManager.swift */; };
 		5B514E27D6406AC6C07465D5 /* Pods_MinaOTP_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B701838C9E3EB9847FFC4BC4 /* Pods_MinaOTP_iOSTests.framework */; };
 		70949E33B8E474360560B4AB /* Pods_MinaOTP_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,9 @@
 		20FBA8FA21105D490017BFC3 /* SysComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysComment.swift; sourceTree = "<group>"; };
 		20FBA901211062220017BFC3 /* MinaOTP-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MinaOTP-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		32DA28C5093E1317165C75EF /* Pods-MinaOTP-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		47B57E82258A24D2004D312F /* MinaOTP-iOSDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MinaOTP-iOSDebug.entitlements"; sourceTree = "<group>"; };
+		47B57E83258A24E5004D312F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		47B57E85258A3472004D312F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinaOTP_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912F9227A9AE53B58A70782C /* Pods-MinaOTP-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSTests/Pods-MinaOTP-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B425E6B69155FC0A3732B737 /* Pods-MinaOTP-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinaOTP-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinaOTP-iOSUITests/Pods-MinaOTP-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70949E33B8E474360560B4AB /* Pods_MinaOTP_iOS.framework in Frameworks */,
+				47B57E84258A24E5004D312F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +150,7 @@
 		20915B0F202C2A780068585F /* MinaOTP-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				47B57E82258A24D2004D312F /* MinaOTP-iOSDebug.entitlements */,
 				20A17A8421228BC60052792D /* ZWPlaceHolder */,
 				20FBA8ED21105D230017BFC3 /* OTPGenerator */,
 				20915B10202C2A780068585F /* AppDelegate.swift */,
@@ -157,6 +164,7 @@
 				20FBA8F921105D490017BFC3 /* FWColor.swift */,
 				20FBA8F621105D490017BFC3 /* FWString.swift */,
 				20A17A7E2121856F0052792D /* Tools.swift */,
+				47B57E85258A3472004D312F /* DataManager.swift */,
 				20FBA901211062220017BFC3 /* MinaOTP-iOS-Bridging-Header.h */,
 				20FBA8FA21105D490017BFC3 /* SysComment.swift */,
 				20915B14202C2A780068585F /* Main.storyboard */,
@@ -221,6 +229,7 @@
 		4BAE6971698FE9C58370DC3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47B57E83258A24E5004D312F /* CloudKit.framework */,
 				61E36E5CC4EC25DA5F01A20B /* Pods_MinaOTP_iOS.framework */,
 				B701838C9E3EB9847FFC4BC4 /* Pods_MinaOTP_iOSTests.framework */,
 				E96BCECD2EF288035C72CE03 /* Pods_MinaOTP_iOSUITests.framework */,
@@ -386,7 +395,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
@@ -397,7 +406,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MinaOTP-iOS/Pods-MinaOTP-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		51415A88A5885FFFDC739E0B /* [CP] Check Pods Manifest.lock */ = {
@@ -453,6 +462,7 @@
 				20FBA8FC21105D490017BFC3 /* FWString.swift in Sources */,
 				20FBA8FD21105D490017BFC3 /* AddSecretViewController.swift in Sources */,
 				20FBA8F321105D240017BFC3 /* Base32Addition.m in Sources */,
+				47B57E86258A3472004D312F /* DataManager.swift in Sources */,
 				20FBA8FB21105D490017BFC3 /* MainViewController.swift in Sources */,
 				20A17A7D212172780052792D /* EditViewController.swift in Sources */,
 				20A17A892122A59A0052792D /* ExportJsonViewController.swift in Sources */,
@@ -628,12 +638,13 @@
 			baseConfigurationReference = B7819CA4E852954D5F68A038 /* Pods-MinaOTP-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MinaOTP-iOS/MinaOTP-iOSDebug.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NQR38UJVN;
+				DEVELOPMENT_TEAM = JXQ4Q3HT8V;
 				INFOPLIST_FILE = "MinaOTP-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Mina-OTP-SWIFT";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jiangren.minaotp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MinaOTP-iOS/MinaOTP-iOS-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -648,7 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3NQR38UJVN;
+				DEVELOPMENT_TEAM = 9S6NN373G3;
 				INFOPLIST_FILE = "MinaOTP-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

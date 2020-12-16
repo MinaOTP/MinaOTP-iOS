@@ -17,9 +17,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         totpArray.removeAll()
-        let defaults = UserDefaults.standard
-        totpArray  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
-        print(totpArray)
+        totpArray = DataManager.get()
         totpTableView.reloadData()
         self.startTimer()
     }
@@ -27,6 +25,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillDisappear(animated)
         self.stopTimer()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "MinaOTP"
@@ -105,6 +104,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.oldTimeStamp = nowTimeStamp
         }
     }
+    
 
     @objc func rightItemAction(sender:UIBarButtonItem){
 
@@ -167,8 +167,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if editingStyle == .delete {
             self.totpArray.remove(at: indexPath.row)
             self.totpTableView.deleteRows(at: [indexPath], with: .left)
-            let defaults = UserDefaults.standard
-            defaults.set(self.totpArray, forKey: "MinaOtp")
+            DataManager.save(self.totpArray)
         }else{
             print("not delete")
         }
@@ -177,8 +176,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let item = totpArray[sourceIndexPath.row]
         totpArray.remove(at: sourceIndexPath.row)
         totpArray.insert(item, at: destinationIndexPath.row)
-        let defaults = UserDefaults.standard
-        defaults.set(self.totpArray, forKey: "MinaOtp")
+        DataManager.save(self.totpArray)
     }
     func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
         print("编辑结束")
