@@ -47,6 +47,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         self.view.addSubview(self.totpTableView)
         self.view.addSubview(self.progressView)
+        
+        DataManager.initial { [weak self] in
+            self?.totpArray.removeAll()
+            self?.totpArray = DataManager.get()
+            self?.totpTableView.reloadData()
+        }
     }
     lazy var progressView:UIProgressView = {
         let view = UIProgressView(progressViewStyle: .bar)

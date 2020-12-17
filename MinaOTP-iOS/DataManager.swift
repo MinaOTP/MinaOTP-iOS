@@ -17,15 +17,22 @@ final class DataManager {
         return CKContainer.default().privateCloudDatabase
     }
     
-    static func initial() {
+    static func initial(_ whenDataUpdate: (() -> Void)?) {
         checkLoginStatus { isLogged in
             if isLogged {
                 HUD.flash(.label("sync from iCloud ..."), delay: 1)
                 fetchRemote { (totps, error) in
+                    print("***** remote fetched *****")
+                    print(totps)
                     if let error = error {
-                        print(error.localizedDescription)
+                        print(error)
                     } else {
                         UserDefaults.standard.set(totps, forKey: RECORD_KEY)
+                        if let whenDataUpdate = whenDataUpdate {
+                            DispatchQueue.main.async {
+                                whenDataUpdate()
+                            }
+                        }
                     }
                 }
             } else {
@@ -44,8 +51,12 @@ final class DataManager {
     static func save(_ totps: [String]) {
         UserDefaults.standard.set(totps, forKey: RECORD_KEY)
         updateRemote(totps) { (saved, error) in
-            print("***** remote saved *****")
-            print(saved)
+            if let error = error {
+                print(error)
+            } else {
+                print("***** remote saved *****")
+                print(saved)
+            }
         }
     }
 }
