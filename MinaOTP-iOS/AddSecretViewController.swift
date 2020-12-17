@@ -127,10 +127,9 @@ class AddSecretViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             session.startRunning()
             return
         }
-        let defaults = UserDefaults.standard
-        var allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
+        var allItems  = DataManager.get()
         allItems.append(code)
-        defaults.set(allItems, forKey: "MinaOtp")
+        DataManager.save(allItems)
         HUD.flash(.success, delay: 1)
         self.navigationController?.popViewController(animated: true)
     }

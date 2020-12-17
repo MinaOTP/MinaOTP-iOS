@@ -34,8 +34,7 @@ class ExportJsonViewController: UIViewController{
         let rightBarButtonItem = UIBarButtonItem(title: "Copy", style: .plain, target: self, action: #selector(rightItemAction))
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
 
-        let defaults = UserDefaults.standard
-        let allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
+        let allItems = DataManager.get()
         var temArray = [Any]()
         for item in allItems{
             let otpDic = Tools().totpDictionaryFormat(code: item)

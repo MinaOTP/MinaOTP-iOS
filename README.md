@@ -53,4 +53,4 @@ Import Tokens from json text
 
 ### Todo
 
-* [ ] sync to icloud
+* [x] sync to icloud

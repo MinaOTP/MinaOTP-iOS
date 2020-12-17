@@ -147,16 +147,14 @@ class EditViewController: UIViewController, UITextFieldDelegate{
 
         let totp = Tools().totpStringFormat(remark: remarkTextField.text!, issuer: issuerTextField.text!, secret: secretTextFiled.text!)
         // 将数据保存到UserDefaults
-        let defaults = UserDefaults.standard
-        var allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
-
+        var allItems  = DataManager.get()
         if editRow < 0 {
             allItems.append(totp)
         }else{
             allItems.remove(at: editRow)
             allItems.insert(totp, at: editRow)
         }
-        defaults.set(allItems, forKey: "MinaOtp")
+        DataManager.save(allItems)
         HUD.flash(.success, delay: 1)
         self.navigationController?.popViewController(animated: true)
     }

@@ -83,14 +83,12 @@ class JsonViewController: UIViewController, UITextViewDelegate{
         let decoder = JSONDecoder()
         do {
             let otpModelArray = try decoder.decode([OtpModel].self, from: jsonTextView.text.data(using: .utf8)!)
-            // 将数据保存到UserDefaults
-            let defaults = UserDefaults.standard
-            var allItems  = defaults.value(forKey: "MinaOtp") as? [String] ?? []
+            var allItems = DataManager.get()
             for item in otpModelArray{
                 let otp = Tools().totpStringFormat(remark: item.remark, issuer: item.issuer, secret: item.secret)
                 allItems.append(otp)
             }
-            defaults.set(allItems, forKey: "MinaOtp")
+            DataManager.save(allItems)
             HUD.flash(.labeledSuccess(title: "导入成功", subtitle: nil), delay: 1)
             self.navigationController?.popViewController(animated: true)
         } catch let error{
